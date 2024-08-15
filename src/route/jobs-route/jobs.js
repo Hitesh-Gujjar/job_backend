@@ -20,7 +20,7 @@ router.get(
 );
 
 router.get(
-    "/list/:user_id",
+    "com/list/:user_id",
     jobList
 );
 
