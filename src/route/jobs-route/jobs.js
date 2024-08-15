@@ -19,6 +19,11 @@ router.get(
     jobList
 );
 
+router.get(
+    "/list/:user_id",
+    jobList
+);
+
 const jobRoutes = router;
 
 // export default adminUsersRoutes
