@@ -1,0 +1,32 @@
+{
+  "name": "job_backend",
+  "version": "1.0.0",
+  "description": "We are create job portal, here all company are requiement show ",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "start",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hitesh-Gujjar/job_portal_backend.git"
+  },
+  "author": "123",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hitesh-Gujjar/job_portal_backend/issues"
+  },
+  "homepage": "https://github.com/Hitesh-Gujjar/job_portal_backend#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "env": "^0.0.2",
+    "express": "^4.19.2",
+    "joi": "^17.13.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.1",
+    "nodemon": "^3.1.0"
+  }
+}
