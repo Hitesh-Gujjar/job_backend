@@ -11,9 +11,12 @@ router.post(
     createAdminUser
 );
 
-router.post('/login', loginAdminUser);
+router.post(
+    '/login',
+    loginAdminUser
+);
 
 const adminUsersRoutes = router
 
 // export default adminUsersRoutes
-export {adminUsersRoutes};
+export { adminUsersRoutes };

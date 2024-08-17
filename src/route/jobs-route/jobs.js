@@ -19,10 +19,6 @@ router.get(
     jobList
 );
 
-router.get(
-    "/com/list/:user_id",
-    jobList
-);
 
 const jobRoutes = router;
 

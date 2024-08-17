@@ -1,7 +1,8 @@
 import adminUserModel from '../../modal/admin-modal/admin-user-model.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import {responseCall} from '../../helper/comman.js'
+import { responseCall } from '../../helper/comman.js'
+import { sendMail } from '../../mail/nodemailer.js';
 
 const createAdminUser = async (req, res) => {
     const { company_name, company_contact, company_email, company_uername, password } = req.body;
@@ -24,7 +25,7 @@ const createAdminUser = async (req, res) => {
 
     if (!checkIsDuplicate?.id) {
         const createAdminUser = await adminUserModel.create(data)
-
+        sendMail();
         if (createAdminUser) {
             res.status(200).json({
                 status: true,
@@ -37,7 +38,7 @@ const createAdminUser = async (req, res) => {
             status: false,
             message: "Email is already exits"
         })
-      
+
     }
 };
 
