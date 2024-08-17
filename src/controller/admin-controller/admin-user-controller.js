@@ -25,7 +25,13 @@ const createAdminUser = async (req, res) => {
 
     if (!checkIsDuplicate?.id) {
         const createAdminUser = await adminUserModel.create(data)
-        sendMail();
+        const mailDetails = {
+            from: 'gujjarh85@gmail.com',
+            to: company_email,
+            subject: 'Sign up successfully ',
+            text: `Hii ${company_name}, Welcome to our  job portal`
+        }
+        sendMail(mailDetails);
         if (createAdminUser) {
             res.status(200).json({
                 status: true,
