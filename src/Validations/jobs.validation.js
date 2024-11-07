@@ -7,6 +7,7 @@ class jobValidation {
             userId: Joi.string().required(),
             company_name: Joi.string().required(),
             designation: Joi.string().required(),
+            experience:Joi.number(),
             job_title: Joi.string().required(),
             email: Joi.string().email({ tlds: { allow: false } }).required().messages({
                 'string.email': 'Invalid email format.',
