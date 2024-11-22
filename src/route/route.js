@@ -7,9 +7,11 @@ router.use(
     '/admin/user/job',
     jobRoutes
 );
+
 router.use(
     '/admin/user',
     adminUsersRoutes
 );
+
 
 export default router; 

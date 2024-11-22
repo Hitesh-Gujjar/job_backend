@@ -1,4 +1,3 @@
-// const jobModel = require('../../modal/job-list/job-modal');
 
 import { jobModal } from '../../modal/job-list/job-modal.js'
 
@@ -23,6 +22,7 @@ const createJob = async (req, res) => {
     };
 
     const create_jobs = await jobModal.create(creat_jobs);
+
     if (create_jobs) {
         return res.status(200).json({
             staus: true,
@@ -36,16 +36,12 @@ const createJob = async (req, res) => {
             data: create_jobs,
         });
     }
-
-
 };
 
 const jobList = async (req, res) => {
     const userId = req?.params?.user_id;
 
-   
-    
-    const getAllJobs = await jobModal.find({userId});
+    const getAllJobs = await jobModal.find({ userId }).sort({ createdAt: -1 });
 
     if (getAllJobs) {
         return res.status(200).json({

@@ -1,5 +1,4 @@
 import express from 'express';
-// import apiRoutes from '../route/route.js';
 import adminRout from './partial/admin.route.api.js'
 import clientRoute from './partial/client.route.api.js'
 import cors from 'cors';

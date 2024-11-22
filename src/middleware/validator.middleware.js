@@ -30,8 +30,12 @@ const validator = (schema) => (req, res, next) => {
 
     if (error) {
         const errorMessage = error.details
-            .map((details) =>( {label:details.context.label, message:details.message.replace(/"/g, "")}))
-        return res.status(400).json({ error: errorMessage });
+            .map((details) => ({ label: details, message: details.message.replace(/"/g, "") }))
+        return res.status(200).json({
+            status: false,
+            message: 'Validation error',
+            error: errorMessage
+        });
     }
     Object.assign(req, value);
     return next();
